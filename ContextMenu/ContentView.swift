@@ -10,6 +10,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    
     var body: some View {
         
         ZStack {
@@ -26,7 +28,7 @@ struct ContentView: View {
                 
                 Text("Basketball or Football ?")
                     .font(.system(size: 20, weight: .bold, design: .rounded))
-
+                
                 Text("Play")
                     .font(.system(size: 20, weight: .bold, design: .rounded))
             }
@@ -35,16 +37,12 @@ struct ContentView: View {
             .padding()
             .background(Color("Bg"))
             .cornerRadius(20)
-            .shadow(color: .black, radius: 1, x: 5, y: 5)
+            .shadow(color: .black, radius: 10, x: 1, y: 5)
             .contextMenu(ContextMenu(menuItems: {
                 
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                     HStack {
-                        Label("Both", image: "basketball.fill")
-//                        Image(systemName: "basketball.fill")
-//                            .font(.system(size: 20, weight: .bold, design: .rounded))
-//                        Image(systemName: "football.fill")
-//                            .font(.system(size: 20, weight: .bold, design: .rounded))
+                        Label("Both", systemImage: "basketball.fill")
                     }
                 })
                 
@@ -57,7 +55,6 @@ struct ContentView: View {
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                     HStack {
                         Text("Football")
-
                     }
                 })
             }))
