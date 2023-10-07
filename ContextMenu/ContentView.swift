@@ -21,6 +21,7 @@ struct ContentView: View {
                     Image(systemName: "basketball.fill")
                         .font(.system(size: 20, weight: .bold, design: .rounded))
                     Image(systemName: "football.fill")
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
                 }
                 
                 Text("Basketball or Football ?")
@@ -29,11 +30,37 @@ struct ContentView: View {
                 Text("Play")
                     .font(.system(size: 20, weight: .bold, design: .rounded))
             }
-            .shadow(color: .black, radius: 10, x: 10, y: 10)
-            .padding()
+            .shadow(color: .white, radius: 10, x: 5, y: 5)
             .foregroundColor(.white)
+            .padding()
             .background(Color("Bg"))
             .cornerRadius(20)
+            .shadow(color: .black, radius: 1, x: 5, y: 5)
+            .contextMenu(ContextMenu(menuItems: {
+                
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    HStack {
+                        Label("Both", image: "basketball.fill")
+//                        Image(systemName: "basketball.fill")
+//                            .font(.system(size: 20, weight: .bold, design: .rounded))
+//                        Image(systemName: "football.fill")
+//                            .font(.system(size: 20, weight: .bold, design: .rounded))
+                    }
+                })
+                
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    HStack {
+                        Text("Basketball")
+                    }
+                })
+                
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    HStack {
+                        Text("Football")
+
+                    }
+                })
+            }))
         }
     }
 }
