@@ -47,14 +47,14 @@ struct ContentView: View {
             .contextMenu(menuItems: {
                 
                 Button(action: {
-                    backgroundColor = .orange
+                    backgroundColor = .orange.opacity(0.7)
                 }, label: {
                     Label("Basketball", systemImage: "basketball.fill")
                         .font(.system(size: 20, weight: .bold, design: .rounded))
                 })
                 
                 Button(action: {
-                    backgroundColor = .green
+                    backgroundColor = .green.opacity(0.5)
                 }, label: {
                     Text("Football")
                     Image(systemName: "football.fill")
@@ -62,7 +62,7 @@ struct ContentView: View {
                 })
                 
                 Button(action: {
-                    backgroundColor = .mint
+                    backgroundColor = .mint.opacity(0.7)
                 }, label: {
                     HStack {
                         Text("Both")
