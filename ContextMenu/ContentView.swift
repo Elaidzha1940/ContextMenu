@@ -10,54 +10,66 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @State var backgroundColor: Color = Color("Bg")
     
     var body: some View {
         
         ZStack {
-            Color(Color("Bg"))
+            Color("Bg")
                 .edgesIgnoringSafeArea(.all)
             
             VStack(alignment: .leading, spacing: 20) {
+                  
                 HStack {
+                    Text("Basketball")
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
                     Image(systemName: "basketball.fill")
                         .font(.system(size: 20, weight: .bold, design: .rounded))
+                }
+                
+                HStack {
+                    Text("Football")
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
+
                     Image(systemName: "football.fill")
                         .font(.system(size: 20, weight: .bold, design: .rounded))
                 }
                 
-                Text("Basketball or Football ?")
-                    .font(.system(size: 20, weight: .bold, design: .rounded))
-                
-                Text("Play")
+                Text("Both")
                     .font(.system(size: 20, weight: .bold, design: .rounded))
             }
             .shadow(color: .white, radius: 10, x: 5, y: 5)
             .foregroundColor(.white)
             .padding()
-            .background(Color("Bg"))
+            .background(backgroundColor)
             .cornerRadius(20)
             .shadow(color: .black, radius: 10, x: 1, y: 5)
-            .contextMenu(ContextMenu(menuItems: {
+            .contextMenu(menuItems: {
                 
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    HStack {
-                        Label("Both", systemImage: "basketball.fill")
-                    }
+                Button(action: {
+                    backgroundColor = .orange
+                }, label: {
+                    Label("Basketball", systemImage: "basketball.fill")
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
                 })
                 
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    HStack {
-                        Text("Basketball")
-                    }
+                Button(action: {
+                    backgroundColor = .green
+                }, label: {
+                    Text("Football")
+                    Image(systemName: "football.fill")
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
                 })
                 
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                Button(action: {
+                    backgroundColor = .blue.opacity(0.6)
+                }, label: {
                     HStack {
-                        Text("Football")
+                        Text("Both")
+                            .font(.system(size: 20, weight: .bold, design: .rounded))
                     }
                 })
-            }))
+            })
         }
     }
 }
