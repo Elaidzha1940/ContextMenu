@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         
         ZStack {
-            Color("Bg")
+            Color(backgroundColor)
                 .edgesIgnoringSafeArea(.all)
             
             VStack(alignment: .leading, spacing: 20) {
@@ -43,7 +43,7 @@ struct ContentView: View {
             .padding()
             .background(backgroundColor)
             .cornerRadius(20)
-            .shadow(color: .black, radius: 10, x: 1, y: 5)
+            .shadow(color: .black, radius: 10, x: 10, y: 10)
             .contextMenu(menuItems: {
                 
                 Button(action: {
@@ -62,7 +62,7 @@ struct ContentView: View {
                 })
                 
                 Button(action: {
-                    backgroundColor = .blue.opacity(0.6)
+                    backgroundColor = .mint
                 }, label: {
                     HStack {
                         Text("Both")
